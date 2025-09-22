@@ -1,4 +1,13 @@
+.venv/
 venv/
+.env/
+env/
+myenv/
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+.DS_Store
+*.log
 chroma_db/
-.streamlit/
 scraped_content.json
