@@ -4,7 +4,7 @@ import json
 from urllib.parse import urljoin, urlparse
 from config import START_URL, SCRAPED_DATA_PATH
 
-def crawl_website(start_url, max_pages=50):
+def crawl_website(start_url, max_pages=200): # change the max pages to visit as needed
     urls_to_visit = {start_url}
     visited_urls = set()
     scraped_data = []

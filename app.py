@@ -76,7 +76,7 @@ New Question:
 prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
 
 # --- UI ---
-st.title(APP_TITLE)
+st.title("How may I assist you?")
 
 try:
     retriever, llm = load_resources()
