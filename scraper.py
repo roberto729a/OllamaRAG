@@ -27,8 +27,8 @@ def crawl_website(start_url, max_pages=50):
         except requests.RequestException as e:
             print(f"  -> Failed to fetch {url}: {e}")
             continue
-
-        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        soup = BeautifulSoup(response.content, 'lxml')
         
         page_title = soup.title.string if soup.title else "No Title"
         
@@ -76,4 +76,3 @@ if __name__ == '__main__':
         
     print(f"\n\nCrawling complete. Scraped {len(all_content)} pages.")
     print(f"Full site content saved to {file_json}")
-        
