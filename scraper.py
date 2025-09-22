@@ -2,8 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from urllib.parse import urljoin, urlparse
+from config import START_URL, SCRAPED_DATA_PATH
 
-def crawl_website(start_url, max_pages=200):
+def crawl_website(start_url, max_pages=50):
     urls_to_visit = {start_url}
     visited_urls = set()
     scraped_data = []
@@ -27,16 +28,16 @@ def crawl_website(start_url, max_pages=200):
         except requests.RequestException as e:
             print(f"  -> Failed to fetch {url}: {e}")
             continue
-        
+
         soup = BeautifulSoup(response.content, 'lxml')
         
         page_title = soup.title.string if soup.title else "No Title"
         
-        main_content = soup.find("div", class_="elementor-page")
+        main_content = soup.find("body")
         if not main_content:
-            main_content = soup.body
+            continue
         
-        for script_or_style in main_content(['script', 'style', 'header', 'footer', 'nav']):
+        for script_or_style in main_content(['script', 'style', 'header', 'footer', 'nav', 'aside']):
             script_or_style.decompose()
 
         page_text = main_content.get_text(separator='\n', strip=True)
@@ -60,19 +61,18 @@ def crawl_website(start_url, max_pages=200):
                 parsed_url.netloc == domain and
                 clean_url not in visited_urls and
                 clean_url not in urls_to_visit and
-                not clean_url.endswith(('.pdf', '.jpg', '.png', '.zip'))
+                not clean_url.endswith(('.pdf', '.jpg', '.png', '.zip', '.svg'))
             ):
                 urls_to_visit.add(clean_url)
 
     return scraped_data
 
 if __name__ == '__main__':
-    start_url = "https://amadisglobal.com/"
-    all_content = crawl_website(start_url)
-    file_json = 'scraped_content.json'
-
-    with open(file_json, 'w', encoding='utf-8') as f:
+    all_content = crawl_website(START_URL)
+    
+    with open(SCRAPED_DATA_PATH, 'w', encoding='utf-8') as f:
         json.dump(all_content, f, indent=4, ensure_ascii=False)
         
     print(f"\n\nCrawling complete. Scraped {len(all_content)} pages.")
-    print(f"Full site content saved to {file_json}")
+    print(f"Full site content saved to {SCRAPED_DATA_PATH}")
+

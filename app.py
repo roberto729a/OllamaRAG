@@ -5,13 +5,20 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from bs4 import BeautifulSoup
+from config import (
+    APP_TITLE, APP_ICON, ASSISTANT_NAME, 
+    ASSISTANT_INTRO, INPUT_PLACEHOLDER, VECTOR_STORE_PATH, 
+    EMBEDDING_MODEL, LLM_MODEL
+)
 
+# --- Page Configuration ---
 st.set_page_config(
-    page_title="GenAI Support Bot",
-    page_icon="🤖",
+    page_title=APP_TITLE,
+    page_icon=APP_ICON,
     layout="wide"
 )
 
+# --- CSS for styling ---
 st.markdown("""
     <style>
         .st-emotion-cache-1c7y2kd, .st-emotion-cache-4oy321 {
@@ -22,10 +29,6 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-
-VECTOR_STORE_PATH = "./chroma_db"
-EMBEDDING_MODEL = "nomic-embed-text"
-LLM_MODEL = "gemma:2b"
 
 def clean_html(raw_html):
     soup = BeautifulSoup(raw_html, 'html.parser')
@@ -50,28 +53,30 @@ def load_resources():
     print("Resources loaded successfully.")
     return retriever, llm
 
-PROMPT_TEMPLATE = """
-You are AmBlue, the AI assistant for Amadis Global. Your persona is helpful, direct, and professional.
-You MUST speak on behalf of the company, using "we," "us," and "our."
+# --- Prompt Template ---
+PROMPT_TEMPLATE = f"""
+You are {ASSISTANT_NAME}, a helpful AI assistant. Your persona is direct, knowledgeable, and professional.
+You are an expert on the information contained in the context documents provided.
 
 Use the following conversation history to understand the context of the new question.
 Your primary task is to answer the user's new question directly using ONLY the information from the provided context documents.
 
-- Do NOT mention the context in your response. Answer straightforwardly.
+- Do NOT mention the context in your response. Answer straightforwardly as an expert.
 - If the context does not contain the information needed to answer the question, you MUST reply with the single sentence: "I do not have enough information to answer that question."
 
 Conversation History:
-{chat_history}
+{{chat_history}}
 
 Context Documents:
-{context}
+{{context}}
 
 New Question:
-{question}
+{{question}}
 """
 prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
 
-st.title("How May I Assist?")
+# --- UI ---
+st.title(APP_TITLE)
 
 try:
     retriever, llm = load_resources()
@@ -86,7 +91,7 @@ generation_chain = (
 )
 
 if "messages" not in st.session_state:
-    st.session_state.messages = [{"role": "assistant", "content": "Hello! I'm AmBlue, the AI assistant for Amadis Global. How can I help you today?"}]
+    st.session_state.messages = [{"role": "assistant", "content": ASSISTANT_INTRO}]
 if "processing" not in st.session_state:
     st.session_state.processing = False
 
@@ -122,7 +127,8 @@ if st.session_state.processing:
             st.session_state.processing = False
             st.rerun()
 
-if user_question := st.chat_input("Type your question here...", disabled=st.session_state.processing):
+if user_question := st.chat_input(INPUT_PLACEHOLDER, disabled=st.session_state.processing):
     st.session_state.messages.append({"role": "user", "content": user_question})
     st.session_state.processing = True
     st.rerun()
+

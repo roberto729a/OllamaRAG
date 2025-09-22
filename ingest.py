@@ -3,17 +3,16 @@ from langchain_chroma import Chroma
 from langchain_ollama import OllamaEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.docstore.document import Document
-
-VECTOR_STORE_PATH = "./chroma_db"
+from config import VECTOR_STORE_PATH, SCRAPED_DATA_PATH, EMBEDDING_MODEL
 
 def ingest_data():
     print("--- Starting data ingestion with metadata ---")
 
     try:
-        with open('scraped_content.json', 'r', encoding='utf-8') as f:
+        with open(SCRAPED_DATA_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
     except FileNotFoundError:
-        print("Error: scraped_content.json not found. Run scraper.py first.")
+        print(f"Error: {SCRAPED_DATA_PATH} not found. Run scraper.py first.")
         return
 
     documents = []
@@ -28,7 +27,7 @@ def ingest_data():
     docs = text_splitter.split_documents(documents)
     print(f"Split content into {len(docs)} metadata-rich chunks.")
 
-    embeddings = OllamaEmbeddings(model="nomic-embed-text")
+    embeddings = OllamaEmbeddings(model=EMBEDDING_MODEL)
     print("Creating embeddings...")
 
     db = Chroma.from_documents(
@@ -40,3 +39,4 @@ def ingest_data():
 
 if __name__ == '__main__':
     ingest_data()
+
