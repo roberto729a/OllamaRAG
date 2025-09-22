@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import json
 from urllib.parse import urljoin, urlparse
 
-def crawl_website(start_url, max_pages=50):
+def crawl_website(start_url, max_pages=200):
     urls_to_visit = {start_url}
     visited_urls = set()
     scraped_data = []
