@@ -122,7 +122,7 @@ if st.session_state.processing:
             st.session_state.processing = False
             st.rerun()
 
-if user_question := st.chat_input("Ask about our Cloud FinOps solutions...", disabled=st.session_state.processing):
+if user_question := st.chat_input("Type your question here...", disabled=st.session_state.processing):
     st.session_state.messages.append({"role": "user", "content": user_question})
     st.session_state.processing = True
     st.rerun()
