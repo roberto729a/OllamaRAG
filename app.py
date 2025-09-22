@@ -25,7 +25,7 @@ st.markdown("""
 
 VECTOR_STORE_PATH = "./chroma_db"
 EMBEDDING_MODEL = "nomic-embed-text"
-LLM_MODEL = "phi3"
+LLM_MODEL = "gemma:2b"
 
 def clean_html(raw_html):
     soup = BeautifulSoup(raw_html, 'html.parser')
