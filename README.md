@@ -68,3 +68,4 @@ Run the data processing scripts in order. **This only needs to be done once** fo
 Now you can start the web application.
 ```bash
 streamlit run app.py
+```
