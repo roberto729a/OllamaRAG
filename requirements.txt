@@ -1,8 +1,8 @@
 beautifulsoup4
 langchain
-langchain_community
-langchain-ollama 
+langchain-ollama
 langchain-chroma
 chromadb
 ollama
 streamlit
+lxml

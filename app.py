@@ -45,7 +45,6 @@ def load_resources():
     vector_store = Chroma(persist_directory=VECTOR_STORE_PATH, embedding_function=embeddings)
     
     retriever = vector_store.as_retriever(search_kwargs={'k': 10})
-    
     llm = ChatOllama(model=LLM_MODEL)
     
     print("Resources loaded successfully.")
@@ -72,7 +71,7 @@ New Question:
 """
 prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
 
-st.title("How may I assist?")
+st.title("How May I Assist?")
 
 try:
     retriever, llm = load_resources()
@@ -127,4 +126,3 @@ if user_question := st.chat_input("Ask about our Cloud FinOps solutions...", dis
     st.session_state.messages.append({"role": "user", "content": user_question})
     st.session_state.processing = True
     st.rerun()
-
