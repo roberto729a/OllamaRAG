@@ -1,0 +1,4 @@
+venv/
+chroma_db/
+.streamlit/
+scraped_content.json
